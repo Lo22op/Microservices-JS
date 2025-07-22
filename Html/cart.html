@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="../style.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>عربة المشتريات</title>
+</head>
+<body class="bg-[#222] text-white flex flex-col items-center min-h-screen p-10">
+
+  <nav class="w-full flex justify-between items-center mb-10">
+    <a href="./wora.html" class="text-yellow-400 hover:text-yellow-500 text-lg font-bold">🏠 الصفحة الرئيسية</a>
+    <h2 class="text-3xl font-bold">🛒 عربة المشتريات</h2>
+  </nav>
+
+  <section id="cartItems" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+    <!-- يتم تعبئته تلقائيًا -->
+  </section>
+
+  <div class="mt-10 w-full max-w-6xl flex justify-between items-center">
+    <button onclick="clearCart()" class="bg-red-500 hover:bg-red-600 px-6 py-3 rounded font-bold">🗑️ حذف كل المشتريات</button>
+    <button onclick="checkout()" class="bg-green-500 hover:bg-green-600 px-6 py-3 rounded font-bold">✅ تأكيد الشراء</button>
+  </div>
+
+ <script>
+  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  function renderCart() {
+    const container = document.getElementById("cartItems");
+    container.innerHTML = "";
+
+    if (cartItems.length === 0) {
+      container.innerHTML = `<p class="text-center text-xl col-span-full text-gray-400">لا توجد كتب في عربة المشتريات.</p>`;
+      return;
+    }
+
+    cartItems.forEach((book, index) => {
+      container.innerHTML += `
+        <div class="bg-gray-800 p-4 rounded-lg shadow text-center">
+          <img src="${book.image}" class="w-full h-[300px] object-cover mb-3 rounded"/>
+          <p class="text-yellow-400 font-semibold">${book.title}</p>
+          <p class="text-sm text-gray-300 my-2">${book.description}</p>
+          <button onclick="removeItem(${index})" class="bg-red-500 px-4 py-2 mt-2 rounded hover:bg-red-600">حذف</button>
+        </div>
+      `;
+    });
+  }
+
+  function removeItem(index) {
+    cartItems.splice(index, 1);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems)); 
+    renderCart();
+  }
+
+  function clearCart() {
+    localStorage.removeItem("cartItems"); 
+    renderCart();
+    window.location.reload(); 
+  }
+
+  function checkout() {
+    alert("تم تأكيد الطلب ✅");
+    clearCart();
+  }
+
+  renderCart();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Operators JS</title>
+</head>
+<body class="bg-[#222] flex flex-col justify-center text-center items-center">
+    <nav>
+        <ul class="flex justify-center items-center mt-10 space-x-8">
+            <li><a href="../index.html" class="text-white hover:text-yellow-400 transition duration-300">Home</a></li>
+        </ul>
+    </nav>
+    <h1 class="text-[60px] font-bold text-yellow-400 t hover:text-shadow-lg hover:text-shadow-cyan-50 cursor-pointer ">JavaScript - Operators App</h1>
+    <p class="text-white text-[30px] font-semibold">نظام التقييم الذكي للمرشحين للوظائف</p>
+    <aside class="mt-10">
+        <p class=" text-sky-50 t hover:text-sky-400  hover:text-[20px] font-semibold">
+            تخيل أن لديك العشرات من المرشحين لوظيفة ما، وتريد تحديد الأفضل بسرعة وموضوعية!
+           . هذا التطبيق الذكي يحل المشكلة عن طريق تحويل مؤهلات المرشحين إلى نقاط واضحة، مما يساعدك في اتخاذ القرار بثقة
+        </p>
+    </aside>
+    <hr  class="w-1/2 mt-10"/>
+    <form class="w-full max-w-3xl mx-auto mt-10 p-8 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold text-white mb-6 text-center">نموذج تقييم المتقدم</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-white">
+            <div>
+                <label for="name" class="block text-white mb-1">الاسم:</label>
+                <input type="text" id="name" class="w-full border border-gray-300 rounded-md p-3 outline-none focus:ring-2 focus:ring-yellow-400" required>
+            </div>
+            <div>
+                <label for="age" class="block text-white mb-1">العمر:</label>
+                <input type="text" id="age" class="w-full border border-gray-300 rounded-md p-3 outline-none focus:ring-2 focus:ring-yellow-400" required>
+            </div>
+            <div>
+                <label for="experience" class="block text-white mb-1">الخبرة (سنوات):</label>
+                <input type="text" id="experience" class="w-full border border-gray-300 rounded-md p-3 outline-none focus:ring-2 focus:ring-yellow-400" required placeholder="مثال: 3">
+            </div>
+            <div>
+                <label for="skills" class="block text-white mb-1">المهارات:</label>
+                <input type="text" id="skills" class="w-full border border-gray-300 rounded-md p-3 outline-none focus:ring-2 focus:ring-yellow-400" required placeholder="مثال: JavaScript, Python, React">
+            </div>
+            <div>
+            <label for="education" class="block text-white mb-1">المؤهل الدراسي:</label>
+            <select id="certifications" class="w-full border border-gray-300 rounded-md p-3 outline-none focus:ring-2 focus:ring-yellow-400" required>
+                <option value="">اختر المؤهل</option>
+                <option value="bachelor">بكالوريوس</option>
+                <option value="master">ماجستير</option>
+                <option value="phd">دكتوراه</option>
+            </select>
+            </div>
+            <div>
+                <label for="languages" class="block text-white mb-1">اللغات:</label>
+                <input type="text" id="languages" class="w-full border border-gray-300 rounded-md p-3 outline-none focus:ring-2 focus:ring-yellow-400" required placeholder="مثال: العربية, الإنجليزية, الفرنسية">
+            </div>
+        </div>
+        <div class="mt-6">
+            <label for="projects" class="block text-white mb-1">المشاريع:</label>
+            <input type="text" id="projects" class="w-full border border-gray-300 rounded-md p-3 outline-none focus:ring-2 focus:ring-yellow-400" required placeholder="مثال: 5">
+        </div>
+        <div class="mt-8 text-center">
+            <button type="button" id="calculate" class="bg-yellow-400 text-gray-800 font-semibold px-6 py-3 rounded-md hover:bg-yellow-500 transition">
+            حساب النقاط
+            </button>
+            <button type="button" id="calculate-Delete" class="bg-yellow-400 text-gray-800 font-semibold px-6 py-3 rounded-md hover:bg-yellow-500 transition">
+                حذف البيانات
+            </button>
+        </div>
+    </form>
+    <hr  class="w-1/2 mt-10"/>
+    <section id="evaluation-result" class="w-full max-w-3xl mx-auto mt-10 bg-gray-800 p-8 rounded-xl shadow-lg hidden ">
+    <h2 class="text-2xl font-bold text-white mb-6 text-center">نتيجة التقييم</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-white">
+        <div class="bg-gray-700 p-4 rounded-lg">
+        <h3 class="text-yellow-400 font-semibold">الاسم:</h3>
+        <p id="res-name" class="mt-1">---</p>
+        </div>
+
+        <div class="bg-gray-700 p-4 rounded-lg">
+        <h3 class="text-yellow-400 font-semibold">العمر:</h3>
+        <p id="res-age" class="mt-1">---</p>
+        </div>
+
+        <div class="bg-gray-700 p-4 rounded-lg">
+        <h3 class="text-yellow-400 font-semibold">الخبرة:</h3>
+        <p id="res-experience" class="mt-1">---</p>
+        </div>
+
+        <div class="bg-gray-700 p-4 rounded-lg">
+        <h3 class="text-yellow-400 font-semibold">عدد المهارات:</h3>
+        <p id="res-skills" class="mt-1">---</p>
+        </div>
+
+        <div class="bg-gray-700 p-4 rounded-lg">
+        <h3 class="text-yellow-400 font-semibold">المؤهل الدراسي</h3>
+        <p id="res-certifications" class="mt-1">---</p>
+        </div>
+
+        <div class="bg-gray-700 p-4 rounded-lg">
+        <h3 class="text-yellow-400 font-semibold">عدد المشاريع:</h3>
+        <p id="res-projects" class="mt-1">---</p>
+        </div>
+
+        <div class="bg-gray-700 p-4 rounded-lg col-span-1 md:col-span-2 text-center">
+            <h3 class="text-yellow-400 font-semibold">عدد اللغات:</h3>
+            <p id="res-languages" class="mt-1">---</p>
+        </div>
+
+        <div class="bg-gray-700 p-4 rounded-lg">
+        <h3 class="text-yellow-400 font-semibold">مجموع النقاط:</h3>
+        <p id="res-total" class="mt-1">---</p>
+        </div>
+
+        <div class="bg-gray-700 p-4 rounded-lg">
+        <h3 class="text-yellow-400 font-semibold">التقييم النهائي:</h3>
+        <p id="res-stars" class="mt-1">★☆☆☆☆</p>
+        </div>
+
+    </div>
+    </section>
+<script src="../js/operators.js"></script>
+</body>
+</html>
+
+
+
+

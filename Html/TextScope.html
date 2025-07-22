@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>TextScope JS</title>
+</head>
+<body class="bg-[#222] flex flex-col justify-center text-center items-center  ">
+    <nav>
+        <ul class="flex justify-center items-center mt-10 space-x-8">
+            <li><a href="../index.html" class="text-white hover:text-yellow-400 transition duration-300">Home</a></li>
+        </ul>
+    </nav>
+    <h1 class="text-[100px] font-bold text-yellow-400 t hover:text-shadow-lg hover:text-shadow-cyan-50 cursor-pointer ">JavaScript</h1>
+    <p class="text-white text-[30px] font-semibold">
+        أداة يدخل فيها المستخدم أي نص، ويطلع له تحليلات قوية تشمل:
+
+        إحصائيات رقمية:
+
+        - عدد الكلمات
+        - عدد الحروف
+        - عدد الأرقام داخل النص
+        - متوسط طول الكلمة
+        - زمن القراءة التقريبي
+    </p>
+    <hr class="w-1/2 mt-10 text-yellow-400" />
+    <form>
+        <div class="flex flex-col items-center mt-10">
+            <textarea id="textInput" rows="10" cols="180" class="w-1/2 text-center p-4 text-white rounded-lg outline-none focus:ring-1 focus:ring-yellow-400" placeholder="أدخل نصك هنا..."></textarea>
+            <button type="button" id="analyzeButton" class="mt-4 px-6 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition duration-300">تحليل النص</button>
+        </div>
+        <div id="results" class="mt-10 text-white hidden">
+            <h2 class="text-2xl font-bold mb-4">نتائج التحليل:</h2>
+            <div id="stats" class="space-y-2">
+                
+            </div>
+        </div>
+    </form>
+    <script  src="../js/TextScope.js"></script>
+</html>
+
+

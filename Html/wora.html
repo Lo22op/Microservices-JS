@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>WorA JS</title>
+
+</head>
+<body class="bg-[#222] flex flex-col justify-center text-center items-center">
+    <nav>
+        <ul class="flex justify-center items-center mt-4 md:mt-10 space-x-4 md:space-x-8">
+            <li><a href="../index.html" class="text-white hover:text-yellow-400 transition duration-300">Home</a></li>
+        </ul>
+    </nav>
+    <h1 class="text-[60px] md:text-[80px] lg:text-[100px] font-bold text-yellow-400 hover:text-shadow-lg hover:text-shadow-cyan-50 cursor-pointer responsive-heading">JavaScript</h1>
+    <p class="text-white text-[20px] md:text-[25px] lg:text-[30px] font-semibold responsive-subheading">
+        OOP (Object-Oriented Programming) فكرة مشروع عملي متقدم على 
+    </p>
+    <hr class="w-[96%] mt-6 md:mt-10 border-[1px] text-yellow-400"/>
+    <header>
+    <nav>
+      <ul class="flex flex-col md:flex-row justify-around items-center mt-6 md:mt-10 gap-4 md:gap-0 responsive-header-nav">
+        <li id="cart" onclick="OpenCart()" class="text-white hover:text-yellow-400 transition duration-300 cursor-pointer order-2 md:order-1">
+          المشتريات(0)
+        </li>
+        
+        <li class="order-1 md:order-2">
+          <button id="loginBtn" class="bg-red-400 text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-red-500 hover:font-bold">
+            <a href="login.html">تسجيل الدخول</a>
+          </button>
+      
+          <button id="logoutBtn" onclick="Logout()" class="hidden bg-red-500 text-white font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-red-600 hover:font-bold">
+            تسجيل الخروج
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="text-center space-y-2 md:space-y-4">
+      <h1 id="welcomeMsg" class="text-xl md:text-2xl lg:text-3xl text-red-500 font-bold"></h1>
+      <p id="userInfo" class="text-base md:text-lg text-gray-400"></p>
+    </div>
+
+        <ul class="flex flex-wrap justify-center items-center mt-6 md:mt-10 gap-4 md:gap-8 responsive-nav">
+            <li id="CategoryR" class="text-gray-400 font-bold font-semibold cursor-pointer hover:text-gray-500 hover:font-bold hover:text-[20px] md:hover:text-[25px] t">رويات</li>
+            <li id="CategoryD" class="text-gray-400 font-bold font-semibold cursor-pointer hover:text-gray-500 hover:font-bold hover:text-[20px] md:hover:text-[25px] t">درامي</li>
+            <li id="CategoryC" class="text-gray-400 font-bold font-semibold cursor-pointer hover:text-gray-500 hover:font-bold hover:text-[20px] md:hover:text-[25px] t">علمية</li>
+            <li id="CategoryA" class="text-gray-400 font-bold font-semibold cursor-pointer hover:text-gray-500 hover:font-bold hover:text-[20px] md:hover:text-[25px] t">أدبية</li>
+            <li id="CategoryU" class="text-gray-400 font-bold font-semibold cursor-pointer hover:text-gray-500 hover:font-bold hover:text-[20px] md:hover:text-[25px] t">دينية</li>
+            <li id="CategoryN" class="text-gray-400 font-bold font-semibold cursor-pointer hover:text-gray-500 hover:font-bold hover:text-[20px] md:hover:text-[25px] t">علمنية</li>                        
+        </ul>
+    </header>
+    <section class="mt-10 md:mt-20 px-4">
+        <aside id="asideR" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-[80px] hidden responsive-grid">
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNH5yMCju_etKnnPaFfcPvFpks8RKh8Zvoow&s" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p> 
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNH5yMCju_etKnnPaFfcPvFpks8RKh8Zvoow&s" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p> 
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNH5yMCju_etKnnPaFfcPvFpks8RKh8Zvoow&s" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p>
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNH5yMCju_etKnnPaFfcPvFpks8RKh8Zvoow&s" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p>
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>  
+        </aside>
+        <aside id="asideD" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-[80px] hidden responsive-grid">
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzwgSvmi2xjA-0_-p_bRWF2wenBAyaW9_AQQ&s" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p> 
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzwgSvmi2xjA-0_-p_bRWF2wenBAyaW9_AQQ&s" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p> 
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzwgSvmi2xjA-0_-p_bRWF2wenBAyaW9_AQQ&s" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p>
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzwgSvmi2xjA-0_-p_bRWF2wenBAyaW9_AQQ&s" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p>
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>  
+        </aside>
+        <aside id="asideC" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-[80px] hidden responsive-grid">
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9jJUIqhyb7Z4AfzfYtztz39as5ymhmlQHMozm9cO6Z3rZBjDNmBVF4Z0wxXfX8DzIYLE&usqp=CAU" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p> 
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9jJUIqhyb7Z4AfzfYtztz39as5ymhmlQHMozm9cO6Z3rZBjDNmBVF4Z0wxXfX8DzIYLE&usqp=CAU" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p> 
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9jJUIqhyb7Z4AfzfYtztz39as5ymhmlQHMozm9cO6Z3rZBjDNmBVF4Z0wxXfX8DzIYLE&usqp=CAU" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p>
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9jJUIqhyb7Z4AfzfYtztz39as5ymhmlQHMozm9cO6Z3rZBjDNmBVF4Z0wxXfX8DzIYLE&usqp=CAU" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p>
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>  
+        </aside>
+        <aside id="asideA" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-[80px] hidden responsive-grid">
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://assets.asfar.io/uploads/2023/03/09155211/isolation-and-individualism-imam-ibn-abi-aldunya-300x449.jpg" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p> 
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://assets.asfar.io/uploads/2023/03/09155211/isolation-and-individualism-imam-ibn-abi-aldunya-300x449.jpg" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p> 
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://assets.asfar.io/uploads/2023/03/09155211/isolation-and-individualism-imam-ibn-abi-aldunya-300x449.jpg" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p>
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://assets.asfar.io/uploads/2023/03/09155211/isolation-and-individualism-imam-ibn-abi-aldunya-300x449.jpg" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p>
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>  
+        </aside>
+        <aside id="asideU" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-[80px] hidden responsive-grid">
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://assets.asfar.io/uploads/2024/05/05014635/photographer-hajj-travels-muhammad-ali-effendi-alsaudi-1904-1908-330x452.jpg" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p> 
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://assets.asfar.io/uploads/2024/05/05014635/photographer-hajj-travels-muhammad-ali-effendi-alsaudi-1904-1908-330x452.jpg" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p> 
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://assets.asfar.io/uploads/2024/05/05014635/photographer-hajj-travels-muhammad-ali-effendi-alsaudi-1904-1908-330x452.jpg" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p>
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://assets.asfar.io/uploads/2024/05/05014635/photographer-hajj-travels-muhammad-ali-effendi-alsaudi-1904-1908-330x452.jpg" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p>
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>  
+        </aside>
+        <aside id="asideN" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-[80px] hidden responsive-grid">
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://assets.asfar.io/uploads/2024/05/05014703/death-in-florence-paul-strathairn-330x452.jpg" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p> 
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://assets.asfar.io/uploads/2024/05/05014703/death-in-florence-paul-strathairn-330x452.jpg" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p> 
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://assets.asfar.io/uploads/2024/05/05014703/death-in-florence-paul-strathairn-330x452.jpg" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p>
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>
+            <div id="Box" class="bg-gray-800 text-center rounded-lg text-white hover:bg-gray-700 transition duration-300 cursor-pointer">
+                <img src="https://assets.asfar.io/uploads/2024/05/05014703/death-in-florence-paul-strathairn-330x452.jpg" alt="Book Image" class="w-full h-auto"> 
+                <p class="text-sm p-2">وصف الكتاب 1</p>
+                <button class="buy-btn bg-yellow-400 w-full text-gray-800 font-semibold px-4 py-2 md:px-6 md:py-3 rounded-md hover:bg-yellow-500 hover:font-bold t hidden">شراء</button>
+            </div>  
+        </aside>
+    </section>
+
+    <script src="../js/wora.js"></script>
+</body>
+</html>

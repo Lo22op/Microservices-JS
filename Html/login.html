@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>تسجيل الدخول | WorA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg w-full max-w-md text-white">
+    <nav>
+        <ul class="flex justify-center items-center mt-10 space-x-8">
+            <li><a href="../index.html" class="text-white hover:text-yellow-400 transition duration-300">Home</a></li>
+        </ul>
+    </nav>
+    <h2 class="text-3xl font-bold text-center mb-6">تسجيل الدخول</h2>
+
+    <form id="loginForm" class="space-y-5">
+      <div>
+        <label class="block mb-1 font-semibold">اسم المستخدم</label>
+        <input id="username" type="text" required placeholder="اسمك"
+          class="w-full px-4 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+      </div>
+
+      <div>
+        <label class="block mb-1 font-semibold">نوع المستخدم</label>
+        <select id="userType" required class="w-full px-4 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
+          <option value="" disabled selected>اختر نوع المستخدم</option>
+          <option value="قارئ">قارئ</option>
+          <option value="مستخدم عادي">مستخدم عادي</option>
+        </select>
+      </div>
+
+      <button type="submit"
+        class="w-full bg-yellow-400 text-gray-800 font-bold py-2 rounded-md hover:bg-yellow-500 transition duration-300">
+        دخول
+      </button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const userType = document.getElementById("userType").value;
+
+      // حفظ البيانات في localStorage
+      localStorage.setItem("username", username);
+      localStorage.setItem("userType", userType);
+
+      // توجيه للصفحة الرئيسية
+      window.location.href = "wora.html";
+    });
+  </script>
+
+</body>
+</html>
