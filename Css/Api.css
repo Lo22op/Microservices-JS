@@ -23,3 +23,28 @@ border-radius: 10px;
   background-color: #e1de27;
   cursor: pointer;
 }
+.data-section{
+background-color: white;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 23px;
+  width: 80%;
+}
+.data-section h1{
+    font-size: 2em;
+    color: #333;
+}
+.data-section h2{
+    font-size: 1.5em;
+    color: #555;
+}
+.data-section h3{
+    font-size: 1.2em;
+    color: #777;
+}
+.data-section hr{
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
