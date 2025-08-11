@@ -1,5 +1,4 @@
 body{
-    background-color: #222;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
@@ -14,7 +13,7 @@ h1 {
 }
 .text-color{
     font-size: 3.5em;
-    color :#ff6464
+    color :#000000
 }
 section  button{
 border-radius: 10px;

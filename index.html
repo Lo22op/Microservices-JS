@@ -2,25 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Home JS</title>
+    <title>Microservices | JS</title>
 </head>
-<body class="bg-[#222] flex flex-col justify-center text-center items-center h-screen ">
-    <h1 class="text-[100px] font-bold text-yellow-400 t hover:text-shadow-lg hover:text-shadow-cyan-50 cursor-pointer ">JavaScript</h1>
-    <p class="text-white text-[30px] font-semibold">
-        This a website to all practice of JavaScript, from the basics to the advanced topics.
-    </p>
-    <nav>
-        <ul class="flex justify-center items-center mt-10 space-x-8">
-            <li><a href="./Html/Operators.html" class="text-white hover:text-yellow-400 transition duration-300">Operators</a></li>
-            <li><a href="./Html/TextScope.html" class="text-white hover:text-yellow-400 transition duration-300">TextScope</a></li>             
-            <li><a href="./Html/wora.html" class="text-white hover:text-yellow-400 transition duration-300">Wora</a></li>             
-            <li><a href="./Html/Todo.html " class="text-white hover:text-yellow-400 transition duration-300">To_Do</a></li>             
-            <li><a href="./Html/Api.html " class="text-white hover:text-yellow-400 transition duration-300">Api</a></li>             
+<body class="m-[20px]  h-screen ">
+    <nav class="bg-white text-center rounded-lg shadow-xl">
+        <ul class=" flex justify-center items-center mt-10 space-x-8">
+            <li class="font-bold text-sky-400 text-[60px]">Microservices | JS</li>
+            <li class="cursor-pointer ">Icon</li>
+            <li class="cursor-pointer ">Icon</li>
+            <li class="cursor-pointer ">Icon</li>
         </ul>
     </nav>
+
+    <section id="cart" class="mt-10 flex justify-center">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
+        <!-- Card 1 -->
+        <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center t hover:scale-125">
+          <div class="w-24 h-24 bg-gray-100 rounded mb-4 flex items-center justify-center">
+            <!-- مكان الصورة مستقبلاً -->
+            <span class="text-gray-300 text-4xl">📄</span>
+          </div>
+          <a href="./Html/Operators.html" class="text-lg font-bold text-sky-500 hover:underline mb-2">Operators</a>
+          <p class="text-gray-500 text-center text-sm">شرح العمليات في جافاسكريبت</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center t hover:scale-125">
+          <div class="w-24 h-24 bg-gray-100 rounded mb-4 flex items-center justify-center">
+            <span class="text-gray-300 text-4xl">📄</span>
+          </div>
+          <a href="./Html/TextScope.html" class="text-lg font-bold text-sky-500 hover:underline mb-2">TextScope</a>
+          <p class="text-gray-500 text-center text-sm">نطاق النصوص في جافاسكريبت</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center t hover:scale-125">
+          <div class="w-24 h-24 bg-gray-100 rounded mb-4 flex items-center justify-center">
+            <span class="text-gray-300 text-4xl">📄</span>
+          </div>
+          <a href="./Html/wora.html" class="text-lg font-bold text-sky-500 hover:underline mb-2">Wora</a>
+          <p class="text-gray-500 text-center text-sm">مشروع Wora</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center t hover:scale-125">
+          <div class="w-24 h-24 bg-gray-100 rounded mb-4 flex items-center justify-center">
+            <span class="text-gray-300 text-4xl">📄</span>
+          </div>
+          <a href="./Html/Todo.html" class="text-lg font-bold text-sky-500 hover:underline mb-2">To_Do</a>
+          <p class="text-gray-500 text-center text-sm">قائمة المهام</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center t  hover:scale-125">
+          <div class="w-24 h-24 bg-gray-100 rounded mb-4 flex items-center justify-center">
+            <span class="text-gray-300 text-4xl">📄</span>
+          </div>
+          <a href="./Html/Api.html" class="text-lg font-bold text-sky-500 hover:underline mb-2">Api</a>
+          <p class="text-gray-500 text-center text-sm">مشروع API</p>
+        </div>
+      </div>
+    </section>
 </html>
+
 
 

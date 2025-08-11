@@ -7,14 +7,18 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>TextScope JS</title>
 </head>
-<body class="bg-[#222] flex flex-col justify-center text-center items-center  ">
-    <nav>
-        <ul class="flex justify-center items-center mt-10 space-x-8">
-            <li><a href="../index.html" class="text-white hover:text-yellow-400 transition duration-300">Home</a></li>
+<body class="flex flex-col justify-center text-center items-center  ">
+    <nav class="bg-white text-center rounded-lg shadow-xl">
+        <ul class=" flex justify-center items-center mt-10 space-x-8">
+            <li class="font-bold text-sky-400 text-[60px]">Microservices | JS</li>
+            <li><a href="../index.html" class="">Home</a></li>
+            <li class="cursor-pointer ">Icon</li>
+            <li class="cursor-pointer ">Icon</li>
+            <li class="cursor-pointer ">Icon</li>
         </ul>
     </nav>
-    <h1 class="text-[100px] font-bold text-yellow-400 t hover:text-shadow-lg hover:text-shadow-cyan-50 cursor-pointer ">JavaScript</h1>
-    <p class="text-white text-[30px] font-semibold">
+    <h1 class="text-[100px] font-bold text-sky-400 t hover:text-shadow-lg hover:text-shadow-cyan-50 cursor-pointer ">JavaScript</h1>
+    <p class="text-[#ccc] text-[30px] font-semibold">
         أداة يدخل فيها المستخدم أي نص، ويطلع له تحليلات قوية تشمل:
 
         إحصائيات رقمية:
@@ -25,13 +29,13 @@
         - متوسط طول الكلمة
         - زمن القراءة التقريبي
     </p>
-    <hr class="w-1/2 mt-10 text-yellow-400" />
+    <hr class="w-1/2 mt-10 text-sky-400" />
     <form>
         <div class="flex flex-col items-center mt-10">
-            <textarea id="textInput" rows="10" cols="180" class="w-1/2 text-center p-4 text-white rounded-lg outline-none focus:ring-1 focus:ring-yellow-400" placeholder="أدخل نصك هنا..."></textarea>
-            <button type="button" id="analyzeButton" class="mt-4 px-6 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition duration-300">تحليل النص</button>
+            <textarea id="textInput" rows="10" cols="180" class="w-1/2 text-center p-4 rounded-lg outline-none focus:ring-1 focus:ring-yellow-400" placeholder="أدخل نصك هنا..."></textarea>
+            <button type="button" id="analyzeButton" class="mt-4 px-6 py-2 bg-sky-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition duration-300">تحليل النص</button>
         </div>
-        <div id="results" class="mt-10 text-white hidden">
+        <div id="results" class="mt-10  hidden">
             <h2 class="text-2xl font-bold mb-4">نتائج التحليل:</h2>
             <div id="stats" class="space-y-2">
                 
