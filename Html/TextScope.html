@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link href="./style.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>TextScope JS</title>
 </head>
@@ -32,7 +32,10 @@
             </li>
         </ul>
     </nav>
-    <h1 class="text-[100px] font-bold text-sky-400 t hover:text-shadow-lg hover:text-shadow-cyan-50 cursor-pointer ">JavaScript</h1>
+    <div class="flex gap-10 items-center mt-10">
+        <h1 class="text-[100px] font-bold text-sky-400 t hover:text-shadow-lg hover:text-shadow-cyan-50 cursor-pointer ">JavaScript</h1>
+        <p id="i" class="text-red-400 text-[30px] cursor-pointer t hover:text-[40px]">i</p>
+    </div>
     <p class="text-[#ccc] text-[30px] font-semibold">
         أداة يدخل فيها المستخدم أي نص، ويطلع له تحليلات قوية تشمل:
 
@@ -47,7 +50,7 @@
     <hr class="w-1/2 mt-10 text-sky-400" />
     <form>
         <div class="flex flex-col items-center mt-10">
-            <textarea id="textInput" rows="10" cols="180" class="w-1/2 text-center p-4 rounded-lg outline-none focus:ring-1 focus:ring-yellow-400" placeholder="أدخل نصك هنا..."></textarea>
+            <textarea id="textInput" oninput="saveState()" rows="10" cols="180" class="w-1/2 text-center p-4 rounded-lg outline-none focus:ring-1 focus:ring-yellow-400" placeholder="أدخل نصك هنا..."></textarea>
             <button type="button" id="analyzeButton" class="mt-4 px-6 py-2 bg-sky-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition duration-300">تحليل النص</button>
         </div>
         <div id="results" class="mt-10  hidden">

@@ -1,5 +1,5 @@
 .t{
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
         @media (max-width: 1024px) {
